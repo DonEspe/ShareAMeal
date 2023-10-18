@@ -7,11 +7,13 @@
 
 import Foundation
 
-enum CodingKeys: String, CodingKey {
-    case name, slug, phone, email, address, distance = "distance_m"
-}
+
 
 struct Foodbank: Codable, Identifiable {
+    enum CodingKeys: String, CodingKey {
+        case name, slug, phone, email, address, distance = "distance_m"
+    }
+    
     var id: String { slug }
     var name: String
     var slug: String
